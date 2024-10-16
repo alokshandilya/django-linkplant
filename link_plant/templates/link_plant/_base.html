@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% block title %}
+        ?
+      {% endblock %} | LinkTree
+    </title>
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <h1><a href="{% url 'home' %}">LinkTree | Home</a></h1>
+        <div><strong><a href="">Add Link +</a></strong></div>
+        <hr />
+      </nav>
+    </header>
+
+    {% block content %}
+    <div><strong>Warning: </strong>Content block not found</div>
+    {% endblock %}
+
+    <footer>
+      <hr />
+      <p>Made with ❤️ by <a href="https://github.com/alokshandilya">Alok
+        Shandilya</a></p>
+    </footer>
+  </body>
+</html>
