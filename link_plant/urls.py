@@ -1,6 +1,12 @@
 from django.urls import path
 
-from .views import LinkCreateView, LinkDeleteView, LinkListView, LinkUpdateView
+from .views import (
+    LinkCreateView,
+    LinkDeleteView,
+    LinkListView,
+    LinkUpdateView,
+    profile_view,
+)
 
 urlpatterns = [
     path("", LinkListView.as_view(), name="link-list"),
@@ -15,4 +21,5 @@ urlpatterns = [
         LinkDeleteView.as_view(),
         name="link-delete",
     ),
+    path("<slug:profile_slug>/", profile_view, name="profile"),
 ]

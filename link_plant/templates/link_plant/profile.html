@@ -1,0 +1,16 @@
+{% extends "link_plant/_base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h1>Welcome, {{ profile.name }}!</h1>
+<h2>Your Links:</h2>
+<br />
+<ul>
+  {% for link in links %}
+  <li>
+    <a href="{{ link.url }}" target="_blank">{{ link.text }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
