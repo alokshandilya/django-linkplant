@@ -13,6 +13,7 @@
           <th>URL</th>
           <th>Profile</th>
           <th>Edit</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -21,11 +22,12 @@
           <td>{{ link.text }}</td>
           <td><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></td>
           <td>{{ link.profile }}</td>
-          <td><a href="">Edit</a></td>
+          <td><a href="{% url 'link-update' link.id %}">Edit</a></td>
+          <td><a href="{% url 'link-delete' link.id %}">Delete</a></td>
         </tr>
       {% endfor %}
       </tbody>
     </table>
-    <div><strong><a href="">Add New +</a></strong></div>
+    <div><strong><a href="{% url 'link-create' %}">Add New +</a></strong></div>
   </div>
 {% endblock %}

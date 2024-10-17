@@ -1,0 +1,15 @@
+{% extends "link_plant/_base.html" %}
+
+{% block title %}
+  Add Link
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Save Link</button>
+  </form>
+{% endblock %}
